@@ -15,11 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from timerapp.views import ChangeFromAll, StartSession, SessionPlayerChange
+from timerapp.views import ChangeFromAll, StartSession, SessionPlayerChange, NextStep
 
 urlpatterns = [
     path('change/', ChangeFromAll.as_view()),
     path('change/<int:pk>/', SessionPlayerChange.as_view()),
+    path('next/', NextStep.as_view()),
     path('start/', StartSession.as_view()),
     path('admin/', admin.site.urls),
 
